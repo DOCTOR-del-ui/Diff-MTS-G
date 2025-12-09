@@ -33,7 +33,7 @@ class CMAPSSDataset():
         # self.feature_columns=sensor_columns  # 21 sensors
         
         # read train_FD00x
-        data = pd.read_csv("data\\train_" + fd_number + ".txt", delimiter="\s+", header=None)
+        data = pd.read_csv("data/train_" + fd_number + ".txt", delim_whitespace=True, header=None)
         data.columns = columns
         self.engine_size = max(data['id'])
 
