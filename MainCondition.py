@@ -33,9 +33,12 @@ if __name__ == '__main__':
         args.input_size = 14
 
 
-    args.model_path =  os.path.join("weights", args.model_name + '_' + args.dataset + '_' + str(args.window_size) + '.pth')
-    args.syndata_path =  os.path.join("weights"+ "syn_data" + 'syn_'+ args.dataset+'_'+args.model_name + '_' + str(args.window_size) + args.sample_type  +'.npz')
-    
+    args.model_path = os.path.join("weights", f"{args.model_name}_{args.dataset}_{args.window_size}.pth")
+
+    # 合成数据保存路径
+    args.syndata_path = os.path.join("weights", "syn_data", f"syn_{args.dataset}_{args.model_name}_{args.window_size}_{args.sample_type}.npz")
+
+    # 确保父目录存在
     os.makedirs(os.path.dirname(args.model_path), exist_ok=True)
     os.makedirs(os.path.dirname(args.syndata_path), exist_ok=True)
     train_loop = 1
