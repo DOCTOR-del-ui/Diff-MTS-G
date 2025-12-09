@@ -1,2 +1,2 @@
-./train_batch.sh
-./sample_batch.sh
+./train_batch.bat
+./sample_batch.bat
