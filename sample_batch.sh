@@ -3,7 +3,7 @@
 # 循环数据集
 for D in FD001 FD002 FD003 FD004; do
     # 循环窗口大小
-    for W in 96; do
+    for W in 48 96; do
         echo "==============================================="
         echo "Running dataset $D with window_size $W"
         echo "==============================================="
