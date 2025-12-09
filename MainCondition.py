@@ -32,8 +32,12 @@ if __name__ == '__main__':
         args.sample_type = 'ddpm' # ddim, ddpm
         args.input_size = 14
 
+
     args.model_path =  os.path.join("weights", args.model_name + '_' + args.dataset + '_' + str(args.window_size) + '.pth')
     args.syndata_path =  os.path.join("weights"+ "syn_data" + 'syn_'+ args.dataset+'_'+args.model_name + '_' + str(args.window_size) + args.sample_type  +'.npz')
+    
+    os.makedirs(os.path.dirname(args.model_path), exist_ok=True)
+    os.makedirs(os.path.dirname(args.syndata_path), exist_ok=True)
     train_loop = 1
 
     datasets = CMAPSSDataset.CMAPSSDataset(fd_number=args.dataset, sequence_length=args.window_size ,deleted_engine=[1000])

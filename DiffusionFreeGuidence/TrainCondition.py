@@ -71,6 +71,7 @@ def train(args, train_data, train_label):
         current_loss = sum(loss_list)/len(loss_list)
         wandb.log({"Diffusion_Loss":current_loss})
         if e > 5 and current_loss < best_loss:
+            
             torch.save(net_model.state_dict(), args.model_path)
             print('*******imporove!!!********')
 
