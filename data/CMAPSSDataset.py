@@ -56,9 +56,9 @@ class CMAPSSDataset():
         self.train_data = join_data.reindex(columns=data.columns)
         
         # Read the test dataset by the RUL_FD00x.txt file.
-        test_data = pd.read_csv("data\\test_" + fd_number + ".txt", delimiter="\s+", header=None)
+        test_data = pd.read_csv("data/test_" + fd_number + ".txt", delim_whitespace=True, header=None)
         test_data.columns = columns
-        truth_data = pd.read_csv("data\\RUL_" + fd_number + ".txt", delimiter="\s+", header=None)
+        truth_data = pd.read_csv("data/RUL_" + fd_number + ".txt", delim_whitespace=True, header=None)
         truth_data.columns = ['truth']
         truth_data['id'] = truth_data.index + 1
         
