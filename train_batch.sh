@@ -13,7 +13,7 @@ for D in FD001 FD002 FD003 FD004; do
             --dataset $D \
             --lr 2e-3 \
             --state train \
-            --model_name DiffWave \
+            --model_name DiffUnet \
             --T 500 \
             --window_size $W \
             --sample_type ddpm \
