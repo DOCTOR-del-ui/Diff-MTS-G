@@ -8,7 +8,7 @@ for %%D in (FD001 FD002 FD003 FD004) do (
         echo ===============================================
         echo Running dataset %%D with window_size %%W
         echo ===============================================
-        python MainCondition.py --epoch 150 --dataset %%D --lr 2e-3 --state eval --model_name DiffTSmarkovp --T 500 --window_size %%W --sample_type ddpm --input_size 14
+        python MainCondition.py --epoch 70 --dataset %%D --lr 2e-3 --state eval --model_name DiffUnet --T 500 --window_size %%W --sample_type ddpm --input_size 14
         echo.
     )
 )
